@@ -1,10 +1,45 @@
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
+import bootstrap from "bootstrap/dist/js/bootstrap.bundle.min.js";
 
 function NavBar() {
+    const closeMenu = () => {
+        const menu = document.getElementById("navbarNav");
+        if (menu && menu.classList.contains("show")) {
+            new bootstrap.Collapse(menu).hide();
+        }
+    };
+
+    // Close menu when clicking anywhere on the page
+    useEffect(() => {
+        const handleClick = (event) => {
+            const nav = document.getElementById("navbarNav");
+            const toggler = document.querySelector(".navbar-toggler");
+
+            // If the click is outside both the toggle button and menu content:
+            if (
+                nav &&
+                nav.classList.contains("show") &&
+                event.target !== nav &&
+                !nav.contains(event.target) &&
+                event.target !== toggler &&
+                !toggler.contains(event.target)
+            ) {
+                closeMenu();
+            }
+        };
+
+        document.addEventListener("click", handleClick);
+
+        return () => {
+            document.removeEventListener("click", handleClick);
+        };
+    }, []);
+
     return (
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm fixed-top">
             <div className="container">
-                <Link className="navbar-brand fw-bold" to="/">
+                <Link className="navbar-brand fw-bold" to="/" onClick={closeMenu}>
                     YouTube Thumbnail Downloader
                 </Link>
 
@@ -20,16 +55,16 @@ function NavBar() {
                 <div className="collapse navbar-collapse justify-content-end" id="navbarNav">
                     <ul className="navbar-nav">
                         <li className="nav-item">
-                            <Link className="nav-link" to="/">Home</Link>
+                            <Link className="nav-link" to="/" onClick={closeMenu}>Home</Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link" to="/news">News</Link>
+                            <Link className="nav-link" to="/news" onClick={closeMenu}>News</Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link" to="/about">About Us</Link>
+                            <Link className="nav-link" to="/about" onClick={closeMenu}>About Us</Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link" to="/privacy">Privacy Policy</Link>
+                            <Link className="nav-link" to="/privacy" onClick={closeMenu}>Privacy Policy</Link>
                         </li>
                     </ul>
                 </div>
