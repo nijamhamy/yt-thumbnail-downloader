@@ -58,7 +58,7 @@ function NavBar() {
                             <Link className="nav-link" to="/" onClick={closeMenu}>Home</Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link" to="/news" onClick={closeMenu}>News</Link>
+                            <Link className="nav-link" to="/posts" onClick={closeMenu}>Posts</Link>
                         </li>
                         <li className="nav-item">
                             <Link className="nav-link" to="/about" onClick={closeMenu}>About Us</Link>
@@ -73,7 +73,7 @@ function NavBar() {
                             <Link className="nav-link" to="/dmca" onClick={closeMenu}>DMCA</Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link" to="/contact" onClick={closeMenu}>Contact</Link>
+                            <Link className="nav-link" to="/contact" onClick={closeMenu}>Contact Us</Link>
                         </li>
 
                     </ul>

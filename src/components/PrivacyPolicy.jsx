@@ -1,117 +1,113 @@
 function PrivacyPolicy() {
     return (
-        <div className="container mt-5 pt-5 text-light">
-            <h2 className="fw-bold mb-4 text-dark">Privacy Policy</h2>
+        <div className="container mt-5 pt-5" style={{ maxWidth: "850px" }}>
+            <h2 className="fw-bold mb-4 text-primary">Privacy Policy</h2>
 
-            <p className="text-secondary">
+            <p className="text-muted">
                 <strong>Last Updated:</strong> {new Date().toLocaleDateString()}
             </p>
 
             <p className="text-secondary">
-                Welcome to <strong>YouTube Thumbnail Downloader HD</strong>. Your privacy is very important to us.
-                This Privacy Policy explains what information we collect, what we don't collect, and how your data is handled.
+                Welcome to <strong>YouTube Thumbnail Downloader</strong>. Your privacy is extremely important to us.
+                This Privacy Policy explains what information we collect, how we use it, and how your data is protected.
             </p>
 
-            {/* SECTION 1 */}
-            <h4 className="fw-semibold mt-4 text-secondary">Information We Do NOT Collect</h4>
+            <h4 className="fw-bold mt-4 text-dark">1. Information We Do Not Collect</h4>
             <p className="text-secondary">
-                We do <strong>NOT</strong> collect:
-                <br />– Name / Email / Personal details
-                <br />– YouTube login or account information
-                <br />– Thumbnail download history
-                <br />– Stored URLs
+                We do <strong>not</strong> collect or store:
+                <br />– Names, email addresses, or personal details
+                <br />– YouTube account login information
+                <br />– Search history or downloaded thumbnails
+                <br />– URLs entered into our tool
                 <br /><br />
-                All processing happens directly inside your browser. No thumbnails or URLs are stored on our servers.
+                All thumbnail processing is done directly in your browser. No data is sent or stored on our servers.
             </p>
 
-            {/* SECTION 2 */}
-            <h4 className="fw-semibold mt-4 text-secondary">Log Data</h4>
+            <h4 className="fw-bold mt-4 text-dark">2. Log Data</h4>
             <p className="text-secondary">
-                We may receive basic technical data such as your:
+                Like most websites, we may collect basic technical data such as:
                 <br />– IP address
                 <br />– Browser type
                 <br />– Device information
-                <br />– Date & time of visit
+                <br />– Date and time of visit
                 <br /><br />
-                This data is only used for security and analytics and is not personally identifiable.
+                This information is used only for analytics, security, and improving site performance. It cannot identify you personally.
             </p>
 
-            {/* SECTION 3 */}
-            <h4 className="fw-semibold mt-4 text-secondary">Cookies and Third-Party Services</h4>
+            <h4 className="fw-bold mt-4 text-dark">3. Cookies and Third-Party Advertising</h4>
             <p className="text-secondary">
-                We use Google AdSense and other third-party services that may use cookies or tracking technologies
-                to provide personalized ads.
+                Our website uses Google AdSense and other third-party advertisers. These services may use cookies,
+                including the DoubleClick cookie, to provide personalized ads based on your browsing behavior.
             </p>
 
             <p className="text-secondary">
-                You can disable personalized ads here:
+                Users may opt out of personalized advertising by visiting:
                 <br />
-                <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener noreferrer" className="link-light">
-                    Google Ads Settings
+                <a
+                    href="https://www.google.com/settings/ads"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-primary"
+                >
+                    https://www.google.com/settings/ads
                 </a>
             </p>
 
-            {/* SECTION 4 */}
-            <h4 className="fw-semibold mt-4 text-secondary">Google AdSense Disclosure</h4>
             <p className="text-secondary">
-                Google and third-party vendors use cookies to:
-                <br />– Display ads
-                <br />– Measure engagement
-                <br />– Avoid repeated ads
-            </p>
-            <p className="text-secondary">
-                To learn more about how Google uses information:
+                To learn how Google uses data:
                 <br />
-                <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener noreferrer" className="link-light">
+                <a
+                    href="https://policies.google.com/technologies/ads"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-primary"
+                >
                     https://policies.google.com/technologies/ads
                 </a>
             </p>
 
-            {/* SECTION 5 */}
-            <h4 className="fw-semibold mt-4 text-secondary">External Links</h4>
+            <h4 className="fw-bold mt-4 text-dark">4. Third-Party Links</h4>
             <p className="text-secondary">
-                Our website may contain links to external websites. We are not responsible for the content or privacy practices
-                of those sites.
+                Our site may contain links to external websites. We are not responsible for the content, privacy
+                practices, or policies of those third-party sites. Users are encouraged to review the privacy policies
+                of any external websites they visit.
             </p>
 
-            {/* SECTION 6 */}
-            <h4 className="fw-semibold mt-4 text-secondary">Copyright & YouTube Content</h4>
+            <h4 className="fw-bold mt-4 text-dark">5. YouTube and Copyright Disclaimer</h4>
             <p className="text-secondary">
-                This tool does <strong>not store or host any YouTube videos or images</strong>. It only retrieves public thumbnails
-                using the YouTube public image endpoint. All rights remain with their respective owners.
+                This tool does not store, host, or download any copyrighted content. It only fetches publicly available
+                thumbnails from YouTube’s public image server. All rights remain with their respective content owners.
             </p>
 
-            {/* SECTION 7 */}
-            <h4 className="fw-semibold mt-4 text-secondary">Your Rights (GDPR / CCPA)</h4>
+            <h4 className="fw-bold mt-4 text-dark">6. GDPR and CCPA User Rights</h4>
             <p className="text-secondary">
-                You have the right to:
-                <br />– Request information about any data we may hold
-                <br />– Request data deletion
-                <br />– Opt-out of cookies & tracking
+                If applicable, you have the right to:
+                <br />– Request information about any stored data
+                <br />– Request deletion of your data
+                <br />– Opt out of tracking and cookies
                 <br /><br />
-                Since we do not store personal information, most requests will simply confirm that no data exists.
+                Since we do not store personal data, most requests will simply confirm that no data is held.
             </p>
 
-            {/* SECTION 8 */}
-            <h4 className="fw-semibold mt-4 text-secondary">Children’s Privacy</h4>
+            <h4 className="fw-bold mt-4 text-dark">7. Children's Privacy</h4>
             <p className="text-secondary">
-                This service is not intended for children under 13. We do not knowingly collect personal data from minors.
+                This service is not intended for children under the age of 13. We do not knowingly collect or store
+                any information from minors.
             </p>
 
-            {/* SECTION 9 */}
-            <h4 className="fw-semibold mt-4 text-secondary">Changes to This Privacy Policy</h4>
+            <h4 className="fw-bold mt-4 text-dark">8. Policy Updates</h4>
             <p className="text-secondary">
-                We may update this Privacy Policy at any time. Any changes will be posted here with a new “Last Updated” date.
+                We may update this Privacy Policy from time to time. Any changes will be posted on this page with a
+                new “Last Updated” date.
             </p>
 
-            {/* SECTION 10 */}
-            <h4 className="fw-semibold mt-4 text-secondary">Contact Us</h4>
+            <h4 className="fw-bold mt-4 text-dark">9. Contact Us</h4>
             <p className="text-secondary">
-                If you have any questions, please contact us:
+                For questions or concerns regarding this Privacy Policy, contact us at:
                 <br />
                 <a
                     href="mailto:amnijam60@gmail.com?subject=Privacy%20Policy%20Inquiry"
-                    className="link-dark"
+                    className="text-primary"
                 >
                     amnijam60@gmail.com
                 </a>
@@ -119,7 +115,7 @@ function PrivacyPolicy() {
 
             <hr className="mt-5" />
             <p className="text-center text-muted small">
-                © {new Date().getFullYear()} YouTube Thumbnail Downloader. All rights reserved.
+                © {new Date().getFullYear()} YouTube Thumbnail Downloader. All Rights Reserved.
             </p>
         </div>
     );

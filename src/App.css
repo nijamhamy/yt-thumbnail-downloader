@@ -8,3 +8,18 @@ body {
 a {
   text-decoration: none;
 }
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 28px;
+  }
+
+  .lead {
+    font-size: 15px;
+  }
+
+  .container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
