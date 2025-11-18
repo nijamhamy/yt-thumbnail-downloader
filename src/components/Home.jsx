@@ -4,7 +4,6 @@ import FAQ from "./FAQ";
 
 function extractVideoId(input) {
     if (!input) return "";
-
     const trimmed = input.trim();
 
     if (/^[a-zA-Z0-9_-]{11}$/.test(trimmed)) return trimmed;
@@ -19,15 +18,10 @@ function extractVideoId(input) {
 function Home() {
     const [input, setInput] = useState("");
     const [videoId, setVideoId] = useState("");
-
-    // Back to Top Button Logic
     const [showButton, setShowButton] = useState(false);
 
     useEffect(() => {
-        const handleScroll = () => {
-            setShowButton(window.scrollY > 300);
-        };
-
+        const handleScroll = () => setShowButton(window.scrollY > 300);
         window.addEventListener("scroll", handleScroll);
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
@@ -35,7 +29,7 @@ function Home() {
     const handleGenerate = () => {
         const id = extractVideoId(input);
         if (!id) {
-            alert("❗ Please enter a valid YouTube video URL or ID.");
+            alert("Please enter a valid YouTube URL or ID.");
             return;
         }
         setVideoId(id);
@@ -52,8 +46,8 @@ function Home() {
             link.click();
             link.remove();
             URL.revokeObjectURL(link.href);
-        } catch (error) {
-            alert("❌ Failed to download image. Try another resolution.");
+        } catch {
+            alert("Failed to download image. Try another resolution.");
         }
     };
 
@@ -80,13 +74,16 @@ function Home() {
 
     return (
         <div className="container mt-5 pt-5 text-center">
-            <h1 className="display-5 fw-bold text-danger">
+
+            <h1 className="display-5 fw-bold text-danger heading-hover">
                 Download YouTube Thumbnails Instantly
             </h1>
+
             <p className="lead text-secondary">
                 Paste a YouTube URL or Video ID and download thumbnails of all available resolutions.
             </p>
 
+            {/* INPUT SECTION */}
             <div className="mt-5">
                 <input
                     type="text"
@@ -102,6 +99,7 @@ function Home() {
                 </button>
             </div>
 
+            {/* THUMBNAIL SECTION */}
             {thumbnails.length > 0 && (
                 <div className="row m-auto mt-5 justify-content-center">
                     {thumbnails.map((thumb, index) => (
@@ -114,13 +112,11 @@ function Home() {
                                 />
                                 <div className="card-body text-center">
                                     <h5 className="card-title">{thumb.quality}</h5>
+
                                     <button
                                         className="btn btn-success"
                                         onClick={() =>
-                                            downloadImage(
-                                                thumb.file,
-                                                `${videoId}-${thumb.quality}.jpg`
-                                            )
+                                            downloadImage(thumb.file, `${videoId}-${thumb.quality}.jpg`)
                                         }
                                     >
                                         Download
@@ -136,82 +132,108 @@ function Home() {
                 Note: Max resolution may not be available for some videos.
             </p>
 
-            {/* ARTICLE CONTENT */}
-            <div
-                className="mt-4 text-start"
-                style={{ maxWidth: "900px", margin: "auto" }}
-            >
-                <h2 className="fw-bold mt-4 text-dark">What Is a YouTube Thumbnail?</h2>
+            {/* ARTICLE SECTION */}
+            <div className="mt-4 text-start article-container">
+
+                {/* SECTION 1 */}
+                <h2 className="fw-bold mt-4 text-dark heading-hover">What Is a YouTube Thumbnail?</h2>
                 <p className="text-secondary">
-                    A YouTube thumbnail is the small preview image that viewers see before
-                    clicking a video. It plays a major role in attracting viewers and can
-                    increase your CTR (Click Through Rate). A good thumbnail improves
-                    visibility, watch-time, and overall video performance.
+                    A YouTube thumbnail is the preview image viewers see before clicking a video.
+                    A good thumbnail increases clicks, watch-time, and overall performance.
                 </p>
 
-                <h2 className="fw-bold mt-4 text-dark">Why Thumbnails Are Important?</h2>
+                {/* SECTION 2 */}
+                <h2 className="fw-bold mt-4 text-dark heading-hover">Why Thumbnails Are Important?</h2>
                 <ul>
-                    <li>Creates the first impression for your video</li>
-                    <li>Increases the click-through rate (CTR)</li>
-                    <li>Helps your video perform better in search results</li>
-                    <li>Makes your content stand out from competitors</li>
+                    <li>Creates the first impression</li>
+                    <li>Increases click-through rate (CTR)</li>
+                    <li>Helps videos rank higher</li>
+                    <li>Makes your content stand out</li>
                 </ul>
 
-                <h2 className="fw-bold mt-4 text-dark">
-                    How to Download YouTube Thumbnails Using Our Tool?
-                </h2>
+                {/* SECTION 3 */}
+                <h2 className="fw-bold mt-4 text-dark heading-hover">How to Download YouTube Thumbnails?</h2>
                 <ol>
-                    <li>Copy the YouTube video link from YouTube.</li>
-                    <li>Paste the link into the search box above.</li>
-                    <li>Click on “Show Thumbnails”.</li>
-                    <li>Preview and download any resolution you want.</li>
+                    <li>Copy the YouTube video link.</li>
+                    <li>Paste it into the search box.</li>
+                    <li>Click “Show Thumbnails”.</li>
+                    <li>Download your preferred resolution.</li>
                 </ol>
 
-                <h2 className="fw-bold mt-4 text-dark">How to Use This Tool (Video Guide)</h2>
+                {/* VIDEO TUTORIAL SECTION */}
+                <h2 className="fw-bold mt-4 text-dark heading-hover">How to Use This Tool (Video Guide)</h2>
                 <p className="text-secondary">
-                    Watch this video to see how to download YouTube thumbnails using our
-                    website:
+                    Watch this short tutorial to learn how to download YouTube thumbnails using this tool.
                 </p>
 
                 <div className="ratio ratio-16x9 mb-4">
                     <iframe
                         src="https://www.youtube.com/embed/qvK8CrLgJBc"
-                        title="How to download YouTube Thumbnail"
+                        title="YouTube Thumbnail Download Tutorial"
                         allowFullScreen
                     ></iframe>
                 </div>
 
-                <h2 className="fw-bold mt-4 text-dark">
-                    Tips to Create High-CTR YouTube Thumbnails
-                </h2>
+
+                {/* SECTION 4 */}
+                <h2 className="fw-bold mt-4 text-dark heading-hover">Thumbnail Size Guide</h2>
                 <ul>
-                    <li>Use bright and contrasting colors</li>
-                    <li>Use big and bold text</li>
-                    <li>Add emotional expressions on faces</li>
-                    <li>Include important objects from your video</li>
-                    <li>Keep the design clean and simple</li>
-                    <li>Always design in 1280×720 resolution</li>
+                    <li>1280 × 720 — HD Max Resolution</li>
+                    <li>720 × 480 — High Quality</li>
+                    <li>480 × 360 — Medium Quality</li>
+                    <li>360 × 240 — Standard Definition</li>
                 </ul>
 
-                <h2 className="fw-bold mt-4 text-dark">YouTube Thumbnail Size Guide</h2>
-                <ul>
-                    <li><strong>1280×720</strong> – Max Resolution (HD)</li>
-                    <li><strong>720×480</strong> – High Quality (HQ)</li>
-                    <li><strong>480×360</strong> – Medium Quality (MQ)</li>
-                    <li><strong>360×240</strong> – Standard (SD)</li>
-                </ul>
-
-                <h2 className="fw-bold mt-4 text-dark">
-                    Is It Legal to Download YouTube Thumbnails?
-                </h2>
+                {/* SECTION 5 */}
+                <h2 className="fw-bold mt-4 text-dark heading-hover">How to Create a YouTube Thumbnail?</h2>
                 <p className="text-secondary">
-                    Yes, downloading thumbnails is safe as long as you use them for personal
-                    use, inspiration, or educational purposes. Make sure you do not use
-                    thumbnails commercially without the creator’s permission.
+                    Follow these steps to design clean, professional thumbnails.
                 </p>
+
+                <h4 className="fw-bold text-dark">Correct Thumbnail Size</h4>
+                <ul>
+                    <li>Recommended: 1280 × 720 pixels</li>
+                    <li>Aspect Ratio: 16:9</li>
+                    <li>File Type: JPG or PNG</li>
+                </ul>
+
+                <h4 className="fw-bold text-dark">Tools to Create Thumbnails</h4>
+                <p className="text-secondary"><strong>Canva:</strong> Best for beginners with templates.</p>
+                <p className="text-secondary"><strong>Photoshop:</strong> Best for professionals.</p>
+                <p className="text-secondary"><strong>Online Tools:</strong> Photopea, Pixlr, Fotor.</p>
+
+                <h4 className="fw-bold text-dark">Thumbnail Design Tips</h4>
+                <ul>
+                    <li>Use bold, readable text</li>
+                    <li>Use bright contrasting colors</li>
+                    <li>Highlight your face or main object</li>
+                    <li>Keep design simple and clean</li>
+                </ul>
+
+                {/* SECTION 6 */}
+                <h2 className="fw-bold mt-4 text-dark heading-hover">How to Choose a YouTube Title?</h2>
+                <ul>
+                    <li>Keep it short and eye-catching</li>
+                    <li>Use keywords people search for</li>
+                    <li>Add strong words like Best, Free, Easy, Tutorial</li>
+                    <li>Avoid clickbait — be honest</li>
+                </ul>
+
+                {/* SECTION 7 */}
+                <h2 className="fw-bold mt-4 text-dark heading-hover">What Is Copyright?</h2>
+                <p className="text-secondary">
+                    Copyright protects original creators. You cannot reuse thumbnails, videos, or images without permission.
+                    Using copyrighted content may cause:
+                </p>
+
+                <ul>
+                    <li>Copyright claim</li>
+                    <li>Video removal</li>
+                    <li>Channel strike</li>
+                </ul>
+
             </div>
 
-            {/* FAQ Section */}
             <FAQ />
 
             {/* BACK TO TOP BUTTON */}

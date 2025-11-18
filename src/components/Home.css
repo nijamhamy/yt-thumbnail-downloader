@@ -1,6 +1,17 @@
 /* ========================
    Thumbnail Image Styling
 ======================== */
+.heading-hover {
+    transition: 0.3s ease;
+}
+
+.heading-hover:hover {
+    color: #198754 !important;
+    /* Bootstrap green */
+    cursor: pointer;
+}
+
+
 .thumbnail-img {
     width: 100%;
     height: 180px;
