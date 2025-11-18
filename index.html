@@ -5,15 +5,22 @@
   <meta charset="UTF-8" />
   <link rel="icon" type="image/png" href="/Logo.png" />
 
+  <!-- REQUIRED for AdSense Approval -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
+    crossorigin="anonymous"></script>
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>YouTube Thumbnail Downloader HD - Free Instant Download</title>
+
   <meta name="description"
     content="Download YouTube thumbnails in HD, SD & 4K for free. Paste the YouTube link and save thumbnails instantly. No login required.">
   <meta name="keywords"
-    content="youtube thumbnail downloader, yt thumbnail, 4k thumbnail download, hd youtube image, download youtube thumbnail">
+    content="youtube thumbnail downloader, yt thumbnail, 4k thumbnail download, hd youtube image, download youtube thumbnail, youtube thumbnail grabber, youtube thumbnail saver">
   <meta name="author" content="Mohammathu Nijam">
 
-  <!-- Open Graph Tags -->
+  <link rel="canonical" href="https://youtube-thumbnail-hd.netlify.app/" />
+
+  <!-- Open Graph Tags for Facebook & WhatsApp -->
   <meta property="og:title" content="YouTube Thumbnail Downloader HD - Free & Instant Download" />
   <meta property="og:description"
     content="Download YouTube thumbnails in HD, SD & 4K instantly. Paste a link and save without login!" />
@@ -27,30 +34,40 @@
   <meta name="twitter:description"
     content="Download any YouTube video thumbnail in HD, SD or 4K resolution without login." />
   <meta name="twitter:image" content="https://youtube-thumbnail-hd.netlify.app/og-image.png" />
-  <link rel="canonical" href="https://youtube-thumbnail-hd.netlify.app/" />
 
+  <!-- Schema.org for Rich Search Results -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "YouTube Thumbnail Downloader",
+    "url": "https://youtube-thumbnail-hd.netlify.app/",
+    "applicationCategory": "Utility",
+    "operatingSystem": "Web",
+    "description": "Download YouTube thumbnails in HD & 4K for free"
+  }
+  </script>
 
+  <!-- FAQ Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [{
+      "@type": "Question",
+      "name": "Is YouTube Thumbnail Downloader free?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, our tool is completely free and requires no account or login."
+      }
+    }]
+  }
+  </script>
 </head>
 
 <body>
   <div id="root"></div>
   <script type="module" src="/src/main.jsx"></script>
 </body>
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [{
-    "@type": "Question",
-    "name": "Is YouTube Thumbnail Downloader free?",
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "Yes, our tool is completely free and requires no account or login."
-    }
-  }]
-}
-</script>
-
 
 </html>
