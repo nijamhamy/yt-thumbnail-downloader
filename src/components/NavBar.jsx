@@ -66,6 +66,16 @@ function NavBar() {
                         <li className="nav-item">
                             <Link className="nav-link" to="/privacy" onClick={closeMenu}>Privacy Policy</Link>
                         </li>
+                        <li className="nav-item">
+                            <Link className="nav-link" to="/terms" onClick={closeMenu}>Terms</Link>
+                        </li>
+                        <li className="nav-item">
+                            <Link className="nav-link" to="/dmca" onClick={closeMenu}>DMCA</Link>
+                        </li>
+                        <li className="nav-item">
+                            <Link className="nav-link" to="/contact" onClick={closeMenu}>Contact</Link>
+                        </li>
+
                     </ul>
                 </div>
             </div>
