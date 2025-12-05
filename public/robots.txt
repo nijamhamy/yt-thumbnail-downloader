@@ -2,3 +2,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://youtube-thumbnail-hd.netlify.app/sitemap.xml
+Sitemap: https://youtube-thumbnail-hd.netlify.app/image-sitemap.xml
