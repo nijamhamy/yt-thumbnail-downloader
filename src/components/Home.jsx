@@ -323,14 +323,6 @@ function Home() {
                         <li>Make sure viewers can understand the idea instantly</li>
                         <li>Highlight only the key subject or message</li>
                     </ul>
-                    <div class="text-center my-4">
-                        <img
-                            src="/og-image.png"
-                            alt="YouTube Thumbnail Downloader HD Tool"
-                            class="img-fluid rounded shadow"
-                            loading="lazy"
-                        />
-                    </div>
 
                     {/* SECTION 6 */}
                     <h2 className="fw-bold mt-4 text-dark heading-hover">How to Choose a High-CTR YouTube Title</h2>
